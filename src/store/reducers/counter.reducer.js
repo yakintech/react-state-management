@@ -3,10 +3,13 @@ export const counterReducer = (state, action) => {
         state = 0;
     }
     if (action.type == 'INCREASE') {
-        return state + 1
+        return state + action.payload
     }
     else if (action.type == 'DECREASE') {
-        return state - 1
+        return state - action.payload
+    }
+    else if(action.type == 'EMPTY'){
+        return 0
     }
     else {
         return state
