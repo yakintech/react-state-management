@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+</head>
+<body>
+
+    <span id="counter">0</span>
+    <div>
+        <button id="increase"> + </button>
+        <button id="decrease"> - </button>
+    </div>
+
+</body>
+<script>
+
+//Bütün state süreçlerini bu COUNTER isimli fonksiyon yönetir. Bir nevi bu fonksiyon state yönetiminin içeriğini oluşturur.
+
+    //REDUCER
+    function counter(state, action){
+        if(!state){
+            state = 0;
+        }
+
+        if(action.type == 'INCREASE'){
+            return state + 1
+        }
+        else if(action.type == 'DECREASE'){
+            return state - 1
+        }
+        else{
+            return state
+        }
+    }
+
+    var store = Redux.createStore(counter)
+
+
+    function renderCounter(){
+        document.getElementById('counter').innerHTML = store.getState().toString()
+    }
+
+    function hello(){
+        console.log('hello function!');
+    }
+
+
+    store.subscribe(renderCounter)
+    store.subscribe(hello)
+
+
+    document.getElementById('increase').addEventListener("click",function(){
+
+        store.dispatch({type:'INCREASE'})
+
+    })
+
+    document.getElementById('decrease').addEventListener("click",function(){
+        
+        store.dispatch({type:'DECREASE'})
+
+    })
+
+</script>
+
+</html>
