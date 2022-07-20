@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { removeAllToDoAction, removeToDoAction } from '../store/actions/todo.action';
 
 function ToDoList() {
 
@@ -11,13 +12,15 @@ function ToDoList() {
 
     const deleteToDo = (item) => {
 
-        dispatch({ type: 'REMOVE_TODO', payload: item })
+        // dispatch({ type: 'REMOVE_TODO', payload: item })
+        dispatch(removeToDoAction(item))
 
     }
 
     const removeAll = () => {
 
-        dispatch({type:'REMOVE_ALL_TODO'})
+        // dispatch({ type: 'REMOVE_ALL_TODO' })
+        dispatch(removeAllToDoAction())
 
     }
 

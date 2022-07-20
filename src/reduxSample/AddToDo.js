@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { addToDoAction } from '../store/actions/todo.action';
 
 function AddToDo() {
 
@@ -20,7 +21,8 @@ function AddToDo() {
             isCompleted: false
         }
 
-        dispatch({ type: 'ADD_TODO', payload: newTodo })
+        // dispatch({ type: 'ADD_TODO', payload: newTodo })
+        dispatch(addToDoAction(newTodo))
 
     }
 
