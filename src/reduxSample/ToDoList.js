@@ -6,7 +6,8 @@ function ToDoList() {
 
     //redux içerisinde bulunan GLOBAL STATE e erişmek için useSelector HOOK unu kullanıyoruz
 
-    let todos = useSelector(state => state);
+    let todos = useSelector(state => state.todoreducer);
+
 
     let dispatch = useDispatch();
 
@@ -20,6 +21,7 @@ function ToDoList() {
     const removeAll = () => {
 
         // dispatch({ type: 'REMOVE_ALL_TODO' })
+
         dispatch(removeAllToDoAction())
 
     }
