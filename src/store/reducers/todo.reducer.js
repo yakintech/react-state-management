@@ -1,7 +1,7 @@
-export const todoreducer = (state = [], action = {}) => {
+export const todoreducer =  (state = [], action = {}) => {
 
     if (!state) {
-        state = []
+         state = []
     }
 
     switch (action.type) {
@@ -14,6 +14,10 @@ export const todoreducer = (state = [], action = {}) => {
 
         case "REMOVE_ALL_TODO":
             return []
+
+        case "GET_TODOS":
+            state = action.payload
+            return state
 
         default:
             return state

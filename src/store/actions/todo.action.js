@@ -8,7 +8,7 @@ export const addToDoAction = (payload) => {
 
 export const removeToDoAction = (payload) => {
     return {
-        type:'REMOVE_TODO',
+        type: 'REMOVE_TODO',
         payload: payload
     }
 }
@@ -19,3 +19,13 @@ export const removeAllToDoAction = () => {
         type: 'REMOVE_ALL_TODO'
     }
 }
+
+
+export const getTodosApiAction = (todos) => {
+    return {
+        type: "GET_TODOS",
+        payload: todos
+    }
+
+}
+

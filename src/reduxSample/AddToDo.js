@@ -4,7 +4,7 @@ import { addToDoAction } from '../store/actions/todo.action';
 
 function AddToDo() {
 
-    const [name, setName] = useState('');
+    const [title, setTitle] = useState('');
 
     //usedispatch hooku ile redux üzerindeki global statei değiştiriyorun. Bunun için reducer a erişiyorum...
 
@@ -17,7 +17,7 @@ function AddToDo() {
 
         let newTodo = {
             id: randomId,
-            name: name,
+            title: title,
             isCompleted: false
         }
 
@@ -32,7 +32,7 @@ function AddToDo() {
         <>
             <div>
                 <label>New ToDo</label>
-                <input type='text' value={name} onChange={(e) => setName(e.target.value)} />
+                <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} />
             </div>
             <div>
                 <button onClick={() => addNewTodo()}>Add</button>

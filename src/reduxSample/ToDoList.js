@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeAllToDoAction, removeToDoAction } from '../store/actions/todo.action';
+import { getTodosApiRequest } from '../store/actions/thunkActions';
+import { getTodosApiAction, removeAllToDoAction, removeToDoAction } from '../store/actions/todo.action';
 
 function ToDoList() {
 
@@ -8,8 +9,14 @@ function ToDoList() {
 
     let todos = useSelector(state => state.todoreducer);
 
-
     let dispatch = useDispatch();
+
+    useEffect(() => {
+      
+        dispatch(getTodosApiRequest())
+
+    }, [])
+    
 
     const deleteToDo = (item) => {
 
@@ -34,7 +41,7 @@ function ToDoList() {
                 {
                     todos && todos.map((item, key) => {
                         return <>
-                            <li id={item.id}>{item.name}</li>
+                            <li id={item.id}>{item.title}</li>
                             <button onClick={() => deleteToDo(item)}>Delete ToDo</button>
                         </>
                     })
