@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 function RadioButtonStateSample() {
 
     const [radioValue, setradioValue] = useState('css');
+    const [fileValue, setfileValue] = useState(null)
 
     const getRadioValue = () => {
 
@@ -11,6 +12,7 @@ function RadioButtonStateSample() {
     }
 
     return (<>
+    <input type='file' value={fileValue} onChange={(e) => setfileValue(e.target.value)} />
 
         <div onChange={(e) => setradioValue(e.target.value)}>
             <input type="radio" id="html" name="fav_language" value="html" />

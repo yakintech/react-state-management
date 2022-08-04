@@ -16,7 +16,6 @@ function SelectOptionStateSample() {
   //  var citySelect =  document.getElementsByTagName('select')[1];
   //  console.log('City text', citySelect[selectedIndex].innerText);
 
-
     let cityName = document.getElementById('cityList')[selectedIndex].innerText
     console.log('City text', cityName);
 

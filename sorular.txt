@@ -1,0 +1,11 @@
+1) Ekrana 3 input text, iki select, 2 radio button, 5 checkbox koy ve bir buton koy.
+Butona tıkladığında text lerdeki değerler, seçilen radiobutton değerini, seçilen checkbox değerlerini console da yazdırsın. Mümkünse bunları json bir objede birleşitirin.
+
+
+{
+    name:'Çağatay', -> Text
+    surname:'Yıldız, -> Text
+    city: 'İzmir',  -> Select
+    onlineStatus: true, -> RadioButton
+    language: ['javascript', 'sql'] -> checkbox list
+}

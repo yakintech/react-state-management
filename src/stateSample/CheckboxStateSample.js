@@ -4,12 +4,13 @@ function CheckboxStateSample() {
 
     const changeEvent = (target) => {
 
-        console.log('Target', target);
+        console.log('Target', target.value);
 
     }
 
     return (<>
         <div>
+
             <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" onChange={(e) => changeEvent(e.target)} />
             <label for="vehicle1"> I have a bike</label><br></br>
 
