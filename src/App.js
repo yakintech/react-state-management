@@ -15,6 +15,9 @@ import mainReducer from './store/reducers/index'
 import { loggerMiddleware } from './store/middleware/loggerMiddleware'
 import thunk from 'redux-thunk'
 import { getTodosApiRequest } from './store/actions/thunkActions'
+import SelectOptionStateSample from './stateSample/SelectOptionStateSample'
+import RadioButtonStateSample from './stateSample/RadioButtonStateSample'
+import CheckboxStateSample from './stateSample/CheckboxStateSample'
 
 function App() {
 
@@ -35,6 +38,10 @@ function App() {
         <Link to="/addtodo">Add ToDo</Link>
         <Link to="/counterheader">Counter</Link>
         <Link to="/counteroperation">Counter Operation</Link>
+        <Link to="/selectoptionstatesample">Select Option</Link>
+        <Link to="/radioButtonStateSample">Radio Button</Link>
+        <Link to="/checkboxstatesample">Checkbox</Link>
+
       </nav>
 
 
@@ -43,8 +50,10 @@ function App() {
         <Route path="/addtodo" element={<AddToDo />} />
         <Route path="/counterheader" element={<CounterHeader />} />
         <Route path="/counteroperation" element={<CounterOperation />} />
-
-
+        <Route path="/selectoptionstatesample" element={<SelectOptionStateSample />} />
+        <Route path="/radiobuttonstatesample" element={<RadioButtonStateSample />} />
+        <Route path="/checkboxstatesample" element={<CheckboxStateSample />} />
+   
       </Routes>
 
     </Provider>
